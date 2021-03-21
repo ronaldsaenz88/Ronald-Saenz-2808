@@ -1,0 +1,206 @@
+openapi: "3.0.2"
+info:
+  title: API TEST - WORLD CURRENCY
+  description: "API TESTING - WORLD CURRENCY FORMAT."
+  version: "1.0"
+  contact:
+    name: "Maintainer"
+    email: "ronaldsaenz88@gmail.com"
+servers:
+  - url: http://127.0.0.1/api/v1
+    description: Development server
+  - url: http://api.com/api/v1
+    description: Production server
+tags:
+  - name: worldcurrency
+    description: "Api test WORLD CURRENCY"
+paths:
+  /worldcurrencyformat/:
+    post:
+      tags:
+        - worldcurrency
+      summary: Get Information about World Currency Format
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              properties:
+                  currency: 
+                    description: Currency Money
+                    type: string
+                  country:
+                    description: Country
+                    type: string
+              required:
+                - currency
+                - country
+      security:
+        - api_key: []
+      responses:
+        200:
+          description: '{message": "xxxxxxx", "status": "Success"} or
+          {message": "xxxxxxx", "status": "Error"}'
+          content: 
+            'application/json': {}
+  /worldcurrencyformat/test:
+    post:
+      tags:
+        - worldcurrency
+      summary: Get the price in the correct format by searching for the World Currency Format
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              properties:
+                  currency: 
+                    description: Currency Money
+                    type: string
+                  country:
+                    description: Country
+                    type: string
+                  price:
+                    description: Price to format
+                    type: string
+              required:
+                - currency
+                - country
+                - price
+      security:
+        - api_key: []
+      responses:
+        200:
+          description: '{message": "xxxxxxx", "status": "Success"} or
+          {message": "xxxxxxx", "status": "Error"}'
+          content: 
+            'application/json': {}
+  /worldcurrencyformat/create:
+    post:
+      tags:
+        - worldcurrency
+      summary: Create register of the World Currency Format on database
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              properties:
+                  name:
+                    description: Name of the World Currency Format
+                    type: string
+                  currency: 
+                    description: Currency Money
+                    type: string
+                  country:
+                    description: Country
+                    type: string
+                  currency_symbol:
+                    description: Currency's symbol, for example $
+                    type: string
+                  currency_code:
+                    description: Currency's code, for example USD, EUR
+                    type: string
+                  currency_thousand_delimeter:
+                    description: Delimiter for thousands in price format, for example , o .
+                    type: string
+                  currency_decimal_delimeter:
+                    description: Delimiter for decimal in price format, for example , o .
+                    type: string
+                  display_currency:
+                    description: Currency's display, for example left or right
+                    type: string
+                  bool_cents:
+                    description: Disabled o enable cents, for example False or True
+                    type: boolean
+              required:
+                - currency
+                - country
+                - name
+      security:
+        - api_key: []
+      responses:
+        200:
+          description: '{message": "xxxxxxx", "status": "Success"} or
+          {message": "xxxxxxx", "status": "Error"}'
+          content: 
+            'application/json': {}
+  /worldcurrencyformat/update:
+    post:
+      tags:
+        - worldcurrency
+      summary: Update the register of the World Currency Format on database
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              properties:
+                  name:
+                    description: Name of the World Currency Format
+                    type: string
+                  currency: 
+                    description: Currency Money
+                    type: string
+                  country:
+                    description: Country
+                    type: string
+                  currency_symbol:
+                    description: Currency's symbol, for example $
+                    type: string
+                  currency_code:
+                    description: Currency's code, for example USD, EUR
+                    type: string
+                  currency_thousand_delimeter:
+                    description: Delimiter for thousands in price format, for example , o .
+                    type: string
+                  currency_decimal_delimeter:
+                    description: Delimiter for decimal in price format, for example , o .
+                    type: string
+                  display_currency:
+                    description: Currency's display, for example left or right
+                    type: string
+                  bool_cents:
+                    description: Disabled o enable cents, for example False or True
+                    type: boolean
+              required:
+                - currency
+                - country
+                - name
+      security:
+        - api_key: []
+      responses:
+        200:
+          description: '{message": "xxxxxxx", "status": "Success"} or
+          {message": "xxxxxxx", "status": "Error"}'
+          content: 
+            'application/json': {}
+  /worldcurrencyformat/delete:
+    post:
+      tags:
+        - worldcurrency
+      summary: Delete the register of the World Currency Format on database
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              properties:
+                  currency: 
+                    description: Currency Money
+                    type: string
+                  country:
+                    description: Country
+                    type: string
+              required:
+                - currency
+                - country
+      security:
+        - api_key: []
+      responses:
+        200:
+          description: '{message": "xxxxxxx", "status": "Success"} or
+          {message": "xxxxxxx", "status": "Error"}'
+          content: 
+            'application/json': {}
+components:
+  securitySchemes:
+    apikey_auth:
+      type: apiKey
+      in: header
+      name: api_key

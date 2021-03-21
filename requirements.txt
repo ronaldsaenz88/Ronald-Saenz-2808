@@ -1,0 +1,13 @@
+Django                  # Framework Django 
+djangorestframework     # Framework Django support for the API
+django-rest-swagger     # Framework Django support for the API
+markdown                # Markdown support for the browsable API.
+django-filter           # Filtering support
+pymongo                 # Pymongo support the connection to database mongodb 
+djongo                  # Pymongo support the connection to database mongodb 
+django-cors-headers     # Support middleware 
+coverage                # Support the test using pytest unitest
+git+https://github.com/django-nonrel/mongodb-engine
+mysqlclient
+dnspython
+requests
